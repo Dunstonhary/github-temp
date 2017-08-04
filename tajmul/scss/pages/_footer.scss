@@ -1,0 +1,159 @@
+// 
+
+footer {
+    position: relative;
+    background: #ffffff;
+    -webkit-transition: -webkit-filter .3s, filter .3s;
+    transition: -webkit-filter .3s, filter .3s;
+    .social {
+        display: block;
+        font-size: 0;
+        text-align: center;
+        padding: 50px 0;
+        margin: 0 auto;
+        @include respond-to(lgmobile) {padding: 30px 0}
+        li {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 0 0 55px;
+            @include respond-to(lgmobile) {margin: 0 0 0 15px}
+            &:first-child {
+                margin: 0
+            }
+            a {
+                display: block;
+                text-align: center;
+                background: #f1f1f1;
+                width: 55px;
+                height: 55px;
+                line-height: 55px;
+                border-radius: 50%;
+                cursor: pointer;
+                @include respond-to(lgmobile) {width: 44px;height: 44px;line-height: 44px}
+                &:hover span {
+                    -webkit-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    transform: scale(1.1);
+                    @include respond-to(lgmobile) {@include tr-scale1;}
+                    &.social-facebook {
+                        color: #3b5998
+                    }
+                    &.social-twitter {
+                        color: #3ac8ff
+                    }
+                    &.social-google {
+                        color: #d34836
+                    }
+                    &.social-linkedin {
+                        color: #007bb6;
+                    }
+                }
+                span{
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: 23px;
+                    color: #b7b4b4;
+                    line-height: 55px;
+                    -webkit-transition: all 300ms;
+                    transition: all 300ms;
+                    @include respond-to(lgmobile) {font-size: 20px;line-height: 44px}
+                }
+            }
+        }
+    }
+    hr{
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: rgba(182, 182, 182, 0.3)
+    }
+    .links {
+        display: block;
+        font-size: 0;
+        text-align: center;
+        padding: 46px 0 16px 0;
+        margin: 0 auto;
+        @include respond-to(lgmobile) {@include flex;@include flex-wrap;@include justify-start;@include align-center;text-align: left;padding: 20px 0 16px 0}
+        .link {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 0 0 55px;
+            @include respond-to(lgmobile) {width: 50%;margin: 10px 0 0 0}
+            &:first-child {
+                margin: 0
+            }
+            a {
+                position: relative;
+                @extend %teritary-font;
+                font-size: 14px;
+                font-weight: 400;
+                color: #848484;
+                line-height: 30px;
+                cursor: pointer;
+                -webkit-transition: all 300ms;
+                transition: all 300ms;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    pointer-events: none;
+                    background: $primary-color;
+                    width: 100%;
+                    height: 1px;
+                    opacity: 0;
+                    -webkit-transform: translate3d(0, 10px, 0);
+                    transform: translate3d(0, 10px, 0);
+                    -webkit-transition: all 300ms;
+                    transition: all 300ms
+                }
+                &:hover {
+                    color: $primary-color
+                }
+                &:hover::after {
+                    opacity: 1;
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0)
+                }
+            }
+            @include respond-to(lgmobile) {
+                &:nth-child(1) {
+                    @include fl-order1;
+                    margin: 0
+                }
+                &:nth-child(2) {
+                    @include fl-order3;
+                }
+                &:nth-child(3) {
+                    @include fl-order5;
+                }
+                &:nth-child(4) {
+                    @include fl-order7;
+                }
+                &:nth-child(5) {
+                    @include fl-order2;
+                    margin: 0
+                }
+                &:nth-child(6) {
+                    @include fl-order4;
+                }
+                &:nth-child(7) {
+                    @include fl-order6;
+                }
+            }
+        }
+    }
+    
+    .copy {
+        @extend %teritary-font;
+        font-size: 14px;
+        font-weight: 400;
+        color: #b7b4b4;
+        text-align: center;
+        line-height: 20px;
+        padding: 0 0 40px 0;
+        @include respond-to(lgmobile) {text-align: left;padding: 0 0 30px 0}
+    }
+}
+
